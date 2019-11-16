@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+    <title></title>
+</head>
+<body>
+
+
+<nav class="flex-column flex-md-row bd-navbar navbar navbar-expand-md navbar-light bg-light">
+    <div class="container-fluid">
+        <a style="text-align: center; margin-top: -5px" class="navbar-brand col-lg-2 col-md-2 col-sm-12" id="logo" href="#">Logo</a>
+        <ul class="nav navbar-nav flex-row" id="navbar-main">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    Лицензии
+                </a>&nbsp;&nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    Счет
+                </a>&nbsp;&nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    Рейтинг
+                </a>&nbsp;&nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    Транзакции
+                </a>&nbsp;&nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    Объявления
+                </a>&nbsp;&nbsp;
+            </li>
+            <li class="nav-item-right">
+                <a class="nav-link" href="#">
+                    Выйти
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<hr>
+
+<style>
+    #rules {
+        margin: 15px 15px 15px 15px;
+    }
+    #navbar-main {
+        padding-top: 20px;
+        margin-top: -22px;
+        margin-bottom: -22px;
+    }
+    #logo {
+        text-align: center;
+    }
+    .nav-item {
+        margin-right: 10px;
+    }
+    .nav-item-right {
+        margin-left: 10px;
+    }
+</style>
+
+<div class="container-fluid" style="margin-top: -15px">
+    <!-- ======================================================================= -->
+    <!-- Main content -->
+    <!-- ======================================================================= -->
+    <div class="row" style="margin-left: 3%">
+        <div class="col-lg-4 col-md-4 col-11 alert alert-info" id="rules">
+            <h3 style="color:brown">Правила использования счёта</h3>
+            <p>
+            <ul>
+                <li>К каждому переводу необходимо указывать комментарий, описывающий предмет сделки.</li>
+                <li>Запрещено совершать операции не соответствующие вашей лицензии.</li>
+            </ul>
+            </p>
+            <p>За несоблюдение выше перечисленных предписаний, банк в праве <b>взыскать штраф</b> в размере от 1x до 3x кратного размера транзакции.</p>
+            <br>
+            <p>Банк в праве запросить разъяснение по операциям типа "другое", а также запросить доказательства реальности сделки. <b> В случае отказа от разъяснений или выявления фиктивности сделки - блокировка счёта.</b></p>
+            <br>
+
+            <p>
+                <b><span style="font-size: 15pt; color:rgb(0, 46, 121);">Вам доступна субсидия</span></b>
+                <br>Размер субсидии до 3000 на один раунд.<br>Непотраченная часть субсидии списывается по итогу раунда.<br>
+                На расходуемую часть субсидии налагается 2%, списывается по итогу раунда вместе с нерасходуемой частью.<br>
+            <form action="/getsubsidy" method="POST">
+                <input id="subsidy" name="subsidy" class="form-control" type="text" placeholder="Сумма субсидии">
+                <span><i>Доступный лимит на этот раунд: 3000</i></span><br><br>
+                <button type="input" class="btn btn-success">Получить субсидию</button>
+            </form>
+            </p>
+        </div>
+        <div class="col-lg-7 col-md-7 col-12">
+            <p>
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Памятка к лицензии!</h4>
+            <p>Здесь будет памятка. Субсидии недоступны</p>
+        </div>
+
+        </p>
+        <h2>На Вашем балансе:
+            0
+        </h2>
+
+
+        <hr>
+        <h3>Переводы:</h3>
+
+        <form action="/send" method="POST">
+            <input id="amount" name="amount" class="form-control" type="text" placeholder="Сумма перевода">
+            <br>
+            <p>Получатель</p>
+            <select name="responser" class="selectpicker" data-show-subtext="true" data-live-search="true">
+
+                <option value="Project_3">Project_3</option>
+
+                <option value="X03">X03</option>
+
+                <option value="C06">C06</option>
+
+                <option value="Y02">Y02</option>
+
+                <option value="Z01">Z01</option>
+
+                <option value="X06">X06</option>
+
+                <option value="X02">X02</option>
+
+                <option value="Bank">Bank</option>
+
+                <option value="Project_5">Project_5</option>
+
+                <option value="X01">X01</option>
+
+                <option value="Всем">Всем</option>
+            </select>
+            <br>
+            <br>
+
+            <input type="radio" id="Оплата труда" name="liclist" value="Оплата труда">
+
+            <label for="Оплата труда">Оплата труда</label><br>
+
+            <input type="radio" id="Оплата проектных услуг" name="liclist" value="Оплата проектных услуг">
+
+            <label for="Оплата проектных услуг">Оплата проектных услуг</label><br>
+
+            <input type="radio" id="Возврат инвестиции" name="liclist" value="Возврат инвестиции">
+
+            <label for="Возврат инвестиции">Возврат инвестиции</label><br>
+
+
+            <input type="radio" id="Продукт" name="liclist" value="Продукт">
+
+            <label for="Продукт">Продукт</label><br>
+
+            <input type="radio" id="Буква" name="liclist" value="Буква">
+
+            <label for="Буква">Буква</label><br>
+
+            <br>
+            <input id="number" name="count" class="form-control" type="number" placeholder="Кол-во единиц">
+            <br>
+            <input id="text" name="text" class="form-control" type="text" placeholder="Предмет оплаты">
+            <br>
+            <button type="input" class="btn btn-success">Перевести</button>
+        </form>
+        <br>
+        <hr>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-sm-12 col-lg-11">
+        <h3 style="text-align: center">Мои операции:</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Счет</th>
+            <th scope="col">Сумма</th>
+            <th scope="col">Комментарий</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="alert alert-danger">
+            <th scope="row">2</th>
+            <td>Bank</td>
+            <td>-10</td>
+            <td>Оплата лицензии &quot;Потребительская компания&quot;</td>
+        </tr>
+        <tr  class="alert alert-success">
+            <th scope="row">1</th>
+            <td>Bank</td>
+            <td>+10</td>
+            <td>Выдача займа</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- ======================================================= -->
+<!-- Footer -->
+<!-- ======================================================= -->
+
+<hr>
+<footer>
+    <div class="foot">
+        <table width="100%"><tr>
+            <td width="33%"></td>
+            <td width="33%"><p align="center">2019 System-2 ©</p></td>
+            <td width="33%"><p align="right" style="padding-right: 10%;"><a href="http://t2ch.ru">Created by Time2Chain</a</p></td>
+        </table></tr>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+
+</body>
+</html>
