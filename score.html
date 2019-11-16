@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
     <title></title>
 </head>
 <body>
-
-
 <nav class="flex-column flex-md-row bd-navbar navbar navbar-expand-md navbar-light bg-light">
     <div class="container-fluid">
         <a style="text-align: center; margin-top: -5px" class="navbar-brand col-lg-2 col-md-2 col-sm-12" id="logo" href="#">Logo</a>
@@ -46,27 +46,7 @@
         </ul>
     </div>
 </nav>
-<hr>
-
-<style>
-    #rules {
-        margin: 15px 15px 15px 15px;
-    }
-    #navbar-main {
-        padding-top: 20px;
-        margin-top: -22px;
-        margin-bottom: -22px;
-    }
-    #logo {
-        text-align: center;
-    }
-    .nav-item {
-        margin-right: 10px;
-    }
-    .nav-item-right {
-        margin-left: 10px;
-    }
-</style>
+<br>
 
 <div class="container-fluid" style="margin-top: -15px">
     <!-- ======================================================================= -->
@@ -113,7 +93,7 @@
         <h3>Переводы:</h3>
 
         <form action="/send" method="POST">
-            <input id="amount" name="amount" class="form-control" type="text" placeholder="Сумма перевода">
+            <input id="amount" name="amount" class="form-control" type="number" placeholder="Сумма перевода">
             <br>
             <p>Получатель</p>
             <select name="responser" class="selectpicker" data-show-subtext="true" data-live-search="true">
@@ -143,7 +123,7 @@
             <br>
             <br>
 
-            <input type="radio" id="Оплата труда" name="liclist" value="Оплата труда">
+            <input type="radio" id="Оплата труда" name="liclist" value="Оплата труда" checked>
 
             <label for="Оплата труда">Оплата труда</label><br>
 
