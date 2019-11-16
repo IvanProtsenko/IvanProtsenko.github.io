@@ -1,0 +1,17 @@
+#rules {
+    margin: 15px 15px 15px 15px;
+}
+#navbar-main {
+    padding-top: 20px;
+    margin-top: -22px;
+    margin-bottom: -22px;
+}
+#logo {
+    text-align: center;
+}
+.nav-item {
+    margin-right: 10px;
+}
+.nav-item-right {
+    margin-left: 10px;
+}
